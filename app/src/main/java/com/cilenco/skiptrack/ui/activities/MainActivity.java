@@ -1,6 +1,5 @@
 package com.cilenco.skiptrack.ui.activities;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -16,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 public class MainActivity extends Activity implements DialogInterface.OnClickListener {
-    private static final String PERMISSION = Manifest.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER;
+    private static final String PERMISSION = "android.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,7 @@ public class MainActivity extends Activity implements DialogInterface.OnClickLis
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{PERMISSION}, 1);
-        }else {
+        } else {
             AppPreferences prefs = new AppPreferences(this);
             prefs.put(PREF_PERMISSION, true);
         }
@@ -37,7 +36,7 @@ public class MainActivity extends Activity implements DialogInterface.OnClickLis
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             AppPreferences prefs = new AppPreferences(this);
             prefs.put(PREF_PERMISSION, true);
         } else {

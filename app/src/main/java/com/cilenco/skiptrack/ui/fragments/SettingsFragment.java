@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,10 +24,10 @@ import static com.cilenco.skiptrack.utils.Constants.PREF_HIDE_ICON;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreferenceCompat;
 
-public class SettingsFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends PreferenceFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,8 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     private void enableNotificationListener() {
+        Log.i("test", "enableNotificationListener");
+
         ContentResolver resolver = getContext().getContentResolver();
         String listeners = Settings.Secure.getString(resolver, PERMISSION_REQUEST);
 
