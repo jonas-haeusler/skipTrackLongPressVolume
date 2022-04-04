@@ -1,12 +1,10 @@
 package com.cilenco.skiptrack.ui.activities;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 
 import com.cilenco.skiptrack.R;
 
@@ -14,7 +12,10 @@ import net.grandcentrix.tray.AppPreferences;
 
 import static com.cilenco.skiptrack.utils.Constants.PREF_PERMISSION;
 
-public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+
+public class MainActivity extends Activity implements DialogInterface.OnClickListener {
     private static final String PERMISSION = Manifest.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER;
 
     @Override

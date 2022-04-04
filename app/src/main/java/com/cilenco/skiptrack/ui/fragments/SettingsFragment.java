@@ -6,17 +6,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceFragmentCompat;
-import android.support.v7.preference.SwitchPreferenceCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.cilenco.skiptrack.R;
 import com.cilenco.skiptrack.ui.activities.LauncherActivity;
-import com.cilenco.skiptrack.utils.TrayPreferenceStore;
 
 import static android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
 import static android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
@@ -25,6 +20,11 @@ import static com.cilenco.skiptrack.utils.Constants.PERMISSION_REQUEST;
 import static com.cilenco.skiptrack.utils.Constants.PERMISSION_REQUEST_ID;
 import static com.cilenco.skiptrack.utils.Constants.PREF_ENABLED;
 import static com.cilenco.skiptrack.utils.Constants.PREF_HIDE_ICON;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreferenceCompat;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 
@@ -36,9 +36,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        TrayPreferenceStore store = new TrayPreferenceStore(getContext());
-        getPreferenceManager().setPreferenceDataStore(store);
-
         addPreferencesFromResource(R.xml.settings);
     }
 

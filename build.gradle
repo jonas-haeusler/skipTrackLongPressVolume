@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4' // 3.3.2
+        classpath 'com.android.tools.build:gradle:7.1.2'
     }
 }
 
@@ -15,14 +15,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-    }
-
-    gradle.taskGraph.whenReady {
-        tasks.each { task ->
-            if (task.name == 'mockableAndroidJar') {
-                task.enabled = false
-            }
-        }
     }
 }
 
