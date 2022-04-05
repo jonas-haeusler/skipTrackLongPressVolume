@@ -20,7 +20,5 @@ You can test this app on an emulator by just giving it the permission as describ
     adb shell input keyevent --longpress KEYCODE_VOLUME_UP
     adb shell input keyevent --longpress KEYCODE_VOLUME_DOWN
 
-### ToDo
-Currently the application is using a `NotificationListenerService` to deal with the new [background limitations](https://developer.android.com/about/versions/oreo/background.html) introduced in Android Oreo. This requires the user to manually enable it in the system settings but has the advantage that it doesn't display an ongoing notification. The problem with this solution is that the application is always running in the background and consumes (very less but measurable) system resources.
 
 If anyone has a better solution for this (i.e. detect a new `MediaSession` and start the service in response) please open an issue for this or send me a pull request. Remember that this should act as a system feature so a notification (e.g. in ForegroundServices) should be avoided.

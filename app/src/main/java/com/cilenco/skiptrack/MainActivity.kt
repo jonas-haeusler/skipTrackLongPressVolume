@@ -1,7 +1,5 @@
 package com.cilenco.skiptrack
 
-import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -19,7 +17,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.preference.PreferenceManager
 
 private const val LONG_PRESS_VOLUME_PERMISSION = "android.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER"
 

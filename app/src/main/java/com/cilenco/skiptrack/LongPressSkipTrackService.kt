@@ -8,7 +8,6 @@ import android.media.AudioManager
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import android.util.Log
 import android.view.KeyEvent
 import androidx.core.app.NotificationCompat
 import androidx.core.content.getSystemService

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.media.session.MediaSessionManager
 import android.os.Handler
 import android.view.KeyEvent
-import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
 import java.lang.reflect.Proxy
 
