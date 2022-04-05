@@ -2,6 +2,7 @@ package com.cilenco.skiptrack
 
 import android.app.Notification
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
 import android.os.Handler
@@ -91,4 +92,12 @@ class LongPressSkipTrackService : Service() {
             .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
             .build()
     }
+}
+
+fun Context.startLongPressSkipTrackService() {
+    startForegroundService(Intent(this, LongPressSkipTrackService::class.java))
+}
+
+fun Context.stopLongPressSkipTrackService() {
+    stopService(Intent(this, LongPressSkipTrackService::class.java))
 }

@@ -47,11 +47,10 @@ class MainActivity : AppCompatActivity() {
     private fun setServiceEnabled(newState: Boolean) {
         preferences.edit().putBoolean("service_enabled", newState).apply()
 
-        val intent = Intent(this, LongPressSkipTrackService::class.java)
         if (newState) {
-            startForegroundService(intent)
+            startLongPressSkipTrackService()
         } else {
-            stopService(intent)
+            stopLongPressSkipTrackService()
         }
     }
 
