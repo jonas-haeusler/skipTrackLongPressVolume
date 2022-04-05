@@ -25,11 +25,11 @@ private const val LONG_PRESS_VOLUME_PERMISSION = "android.permission.SET_VOLUME_
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var preferences: SharedPreferences
+    private lateinit var config: Config
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        config = Config(this)
 
         setContent {
             SettingsScreen()
@@ -41,11 +41,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isServiceEnabled(): Boolean {
-        return preferences.getBoolean("service_enabled", false)
+        return config.serviceEnabled
     }
 
     private fun setServiceEnabled(newState: Boolean) {
-        preferences.edit().putBoolean("service_enabled", newState).apply()
+        config.serviceEnabled = newState
 
         if (newState) {
             startLongPressSkipTrackService()
