@@ -1,4 +1,8 @@
 # Long press volume to skip tracks
+**Please note that due to restrictions imposed by the Android system, detecting long volume button
+presses while the screen is off is no longer possible.
+However, it does still work if you are using Androids Always-On Display :-)**
+
 This repo provides a systemless and standalone application which let's you skip tracks on your Android Oreo (8.0+) device by long pressing the volume keys while the screen is off. It doesn't require root but a permission has to be granted to the app via adb. For more information see the details below.
 
 ### Installation
